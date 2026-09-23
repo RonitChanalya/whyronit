@@ -1,0 +1,19 @@
+:root {
+  --bg: #f1eee8;
+  --surface: #e7e2d9;
+  --surface-strong: #d8d0c4;
+  --fg: #181816;
+  --muted: #6c6963;
+  --accent: #c64b30;
+  --olive: #626a4e;
+  --border: rgba(24, 24, 22, 0.18);
+  --light-border: rgba(241, 238, 232, 0.22);
+  --content: 1440px;
+  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --section-space: clamp(5rem, 9vw, 8.5rem);
+  --radius: 0.45rem;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --display: Arial, Helvetica, sans-serif;
+  --serif: Georgia, 'Times New Roman', serif;
+  --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+}

@@ -1,0 +1,280 @@
+export const resumeUrl = '/assets/ronit-resume.pdf';
+const resumeScreenerHome = new URL('../../assests/resume-screener/home.png', import.meta.url).href;
+
+export const profile = {
+  name: 'Ronit Chanalya',
+  role: 'Software Engineer',
+  email: 'ronitchanalya335@gmail.com',
+  location: 'VIT-AP University',
+  summary: 'Building backend systems, full-stack products, and AI/ML projects',
+  context: 'B.Tech CSE (AI & ML) · VIT-AP · Class of 2027',
+  proofPoints: [
+    'Deployed GenAI screening system',
+    'SecureWipe · selected among 250+ teams',
+    'Scalable backend',
+  ],
+  github: 'https://github.com/RonitChanalya',
+  linkedin: 'https://www.linkedin.com/in/ronit-chanalya/',
+};
+
+export const education = {
+  degree: 'B.Tech, Computer Science and Engineering',
+  specialization: 'Artificial Intelligence & Machine Learning',
+  institution: 'Vellore Institute of Technology, AP',
+  period: '2023 — 2027',
+  cgpa: '8.06',
+  coursework: [
+    'Object Oriented Programming',
+    'Databases',
+    'Discrete Math',
+    'Data Structures & Algorithms',
+    'Operating Systems',
+    'Computer Networks',
+    'Machine Learning',
+  ],
+};
+
+export const projects = [
+  {
+    slug: 'resume-screener',
+    number: '01',
+    title: 'Smart Resume Screener',
+    shortTitle: 'Resume Screener',
+    category: 'Full-stack / GenAI',
+    description: 'An AI-powered candidate screening system that turns mixed resume inputs into structured, ranked decisions.',
+    stack: ['React', 'Node.js', 'Express', 'Python', 'MongoDB', 'Gemini API'],
+    accent: 'coral',
+    image: {
+      src: resumeScreenerHome,
+      alt: 'Smart Resume Screener interface showing job-description input, bulk resume upload, shortlist selection, and candidate screening controls',
+      width: 2940,
+      height: 1496,
+    },
+    links: { github: 'https://github.com/RonitChanalya/ResumeScreener', live: 'https://verifycv.vercel.app/' },
+    metrics: [
+      { value: '4', label: 'input formats' },
+      { value: '1—10', label: 'semantic fit scale' },
+      { value: 'Top-N', label: 'configurable shortlist' },
+    ],
+    overview: 'A full-stack GenAI screening system for evaluating candidate-to-job-description fit across PDF, DOCX, TXT, and bulk ZIP inputs.',
+    problem: 'Resume review needs a consistent way to ingest different document formats, compare candidates with a job description, and turn that evaluation into an actionable shortlist.',
+    built: [
+      'Multi-format resume parsing for PDF, DOCX, TXT, and bulk ZIP input',
+      'Gemini-powered semantic fit ratings, candidate insights, and assessment reports',
+      'Configurable Top-N ranking, leaderboard, skill-gap analysis, and CSV export',
+      'MongoDB persistence through Mongoose with a JSON fallback datastore',
+    ],
+    architectureTitle: 'Four formats to a ranked shortlist.',
+    workflow: [
+      { label: 'Ingest', detail: 'PDF · DOCX · TXT · ZIP' },
+      { label: 'Parse', detail: 'React · Node · Python' },
+      { label: 'Evaluate', detail: 'Gemini · ThreadPoolExecutor' },
+      { label: 'Rank', detail: 'Fit · gaps · Top-N' },
+      { label: 'Export', detail: 'Leaderboard · CSV' },
+    ],
+    decisions: [
+      'Used Python ThreadPoolExecutor to evaluate resumes in parallel.',
+      'Separated the React interface, Node/Express application layer, and Python evaluation workflow.',
+      'Added a fallback datastore so the screening workflow is not coupled to one persistence path.',
+    ],
+    // Add verified implementation challenges here when project notes are available.
+    challenges: [],
+    outcome: 'A deployed screening workflow that produces ranked candidates, skill-gap analysis, and exportable results from four resume input formats.',
+  },
+  {
+    slug: 'securewipe',
+    number: '02',
+    title: 'SecureWipe',
+    shortTitle: 'SecureWipe',
+    category: 'Systems / Security',
+    description: 'A secure data sanitization and verification system with hardware-aware erase paths and tamper-evident certification.',
+    featuredNote: 'Selected among 250+ teams nationwide · 36-hour onsite finals',
+    stack: ['Python', 'Tkinter', 'blkdiscard', 'hdparm', 'RSA-PSS', 'ReportLab'],
+    accent: 'ink',
+    links: { github: 'https://github.com/RonitChanalya/SecureWipe', githubPublic: true, live: '' },
+    metrics: [
+      { value: '2', label: 'supported OS paths' },
+      { value: '3', label: 'Linux hardware erase paths' },
+      { value: '250+', label: 'teams nationwide' },
+    ],
+    overview: 'A cross-platform data sanitization tool for Windows and Linux, pairing overwrite and hardware erase methods with verifiable certificates.',
+    problem: 'Secure erasure needs both an appropriate device-level sanitization method and a trustworthy record showing what was wiped, how, and by whom.',
+    built: [
+      'Tkinter interface for random-pass and zero-pass raw device overwrite',
+      'Linux paths for blkdiscard, NVMe secure format, and ATA secure erase',
+      'RSA-PSS/SHA-256 digitally signed PDF and JSON certificates',
+      'Certificate records containing device metadata, operator details, and unique verification links',
+    ],
+    architectureTitle: 'Device to signed certificate.',
+    workflow: [
+      { label: 'Identify', detail: 'Windows · Linux' },
+      { label: 'Select path', detail: 'Overwrite · hardware erase' },
+      { label: 'Sanitize', detail: 'Random · zero · 3 Linux paths' },
+      { label: 'Record', detail: 'Device · operator metadata' },
+      { label: 'Sign', detail: 'RSA-PSS · SHA-256' },
+      { label: 'Verify', detail: 'PDF · JSON · unique link' },
+    ],
+    decisions: [
+      'Modeled overwrite behavior on NIST SP 800-88 guidance.',
+      'Used hardware-specific erase paths on Linux alongside raw overwrite methods.',
+      'Signed certificate data with RSA-PSS and SHA-256 in both human-readable and machine-readable formats.',
+    ],
+    challenges: [],
+    outcome: 'Selected among 250+ teams nationwide for the Samartha National Level Hackathon’s 36-hour onsite finals.',
+  },
+  {
+    slug: 'video-streaming',
+    number: '03',
+    title: 'Video Streaming Platform',
+    shortTitle: 'Video Streaming',
+    category: 'Backend Infrastructure',
+    description: 'An Express backend for authenticated accounts, media uploads, video management, channel profiles, and watch history.',
+    stack: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'JWT', 'bcrypt', 'Multer', 'Cloudinary', 'CORS'],
+    showcase: {
+      description: 'Backend infrastructure for authentication, media uploads, video management, channel profiles, and watch history.',
+      stack: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'JWT', 'bcrypt', 'Multer', 'Cloudinary'],
+      metrics: [
+        { value: 'JWT', label: 'access + refresh tokens' },
+        { value: 'Multer', label: 'upload middleware' },
+        { value: '$lookup', label: 'MongoDB aggregation' },
+      ],
+    },
+    accent: 'olive',
+    links: { github: 'https://github.com/RonitChanalya/backend', live: '' },
+    metrics: [
+      { value: 'JWT', label: 'access + refresh tokens' },
+      { value: 'Multer', label: 'upload middleware' },
+      { value: '$lookup', label: 'MongoDB aggregation' },
+    ],
+    overview: 'The backend separates routing, middleware, controllers, models, and utilities across user and video workflows. It protects application routes with JWT verification, stores application data through Mongoose, and sends uploaded media through a temporary-file pipeline to Cloudinary.',
+    problem: 'A video application backend needs coordinated identity, protected requests, media lifecycle handling, and document relationships without mixing those responsibilities into one route layer.',
+    built: [
+      'Access and refresh JWT generation, bcrypt password hashing, cookie-based sessions, and authentication middleware',
+      'Multer disk uploads forwarded to Cloudinary for avatars, cover images, videos, thumbnails, and media deletion',
+      'Video publish, retrieval, update, deletion, and publish-status controller workflows',
+      'Mongoose models, document references, populate queries, and aggregation lookups for channel profiles and watch history',
+    ],
+    architectureTitle: 'Request to persisted application state.',
+    workflow: [
+      { label: 'Request', detail: 'CORS · parsers · cookies' },
+      { label: 'Route', detail: '/api/v1/users · /videos' },
+      { label: 'Authorize', detail: 'verifyJWT middleware' },
+      { label: 'Execute', detail: 'User · video controllers' },
+      { label: 'Persist', detail: 'Mongoose · Cloudinary' },
+    ],
+    decisions: [
+      'Separated access and refresh JWTs while persisting the refresh token on the user record.',
+      'Used Multer as the multipart boundary and a dedicated Cloudinary utility for upload and temporary-file cleanup.',
+      'Modeled application relationships with ObjectId references, then used populate and aggregation lookups for composed reads.',
+    ],
+    challenges: [],
+    outcome: 'A layered backend codebase covering account authentication, protected user and video workflows, cloud media handling, and relational MongoDB reads.',
+    caseStudy: {
+      role: 'Backend Development',
+      overview: 'An Express backend organized around identity, protected user and video workflows, media uploads, and channel data. The application mounts user and video API namespaces, applies authentication and upload middleware, persists document relationships with Mongoose, and stores media through Cloudinary.',
+      architecture: [
+        { label: 'Application', title: 'Express entry', detail: 'CORS · body parsers · cookie-parser' },
+        { label: 'Routing', title: 'API v1', detail: '/users · /videos' },
+        { label: 'Middleware', title: 'Request gates', detail: 'verifyJWT · Multer' },
+        { label: 'Controllers', title: 'Domain logic', detail: 'User · video workflows' },
+        { label: 'Persistence', title: 'Data + media', detail: 'Mongoose · Cloudinary' },
+      ],
+      authFlow: [
+        { label: 'Register', detail: 'Validate account fields' },
+        { label: 'Hash', detail: 'bcrypt · cost factor 10' },
+        { label: 'Login', detail: 'Compare password hash' },
+        { label: 'Issue', detail: 'Access + refresh JWTs' },
+        { label: 'Session', detail: 'httpOnly secure cookies' },
+        { label: 'Protect', detail: 'Cookie or Bearer → verifyJWT' },
+      ],
+      authNotes: [
+        'The User model hashes modified passwords in a pre-save hook and exposes a bcrypt comparison method.',
+        'Access and refresh tokens are signed separately; the refresh token is stored on the user document.',
+        'Protected routes accept the access token from an httpOnly cookie or an Authorization Bearer header.',
+      ],
+      mediaFlow: [
+        { label: 'Multipart request', detail: 'Avatar · cover · video · thumbnail' },
+        { label: 'Multer', detail: 'Disk storage in public/temp' },
+        { label: 'Cloudinary utility', detail: 'resource_type: auto' },
+        { label: 'Cleanup', detail: 'Remove local temporary file' },
+        { label: 'Persist', detail: 'URL · duration · public_id' },
+      ],
+      mediaNotes: [
+        'Published videos store the Cloudinary URL, duration, public identifier, owner, and a generated thumbnail URL.',
+        'Video updates can replace the video file or thumbnail alongside title and description changes.',
+        'Deletion removes the Cloudinary video before deleting its MongoDB document.',
+      ],
+      relationships: [
+        { from: 'User', relation: 'watchHistory[]', to: 'Video' },
+        { from: 'Video', relation: 'owner', to: 'User' },
+        { from: 'Playlist', relation: 'videos[] / owner', to: 'Video · User' },
+        { from: 'Comment / Like', relation: 'references', to: 'Video · User · Tweet' },
+        { from: 'Subscription', relation: 'subscriber / channel', to: 'User · User' },
+      ],
+      aggregations: [
+        { title: 'Channel profile', detail: '$lookup subscriber relationships, derive counts and isSubscribed, then project the public profile.' },
+        { title: 'Watch history', detail: '$lookup watched videos, perform a nested owner lookup, and collapse the owner array with $first.' },
+        { title: 'Pagination boundary', detail: 'The aggregate-paginate plugin is registered on Video and Comment schemas, but no controller currently invokes aggregatePaginate.' },
+      ],
+      features: [
+        {
+          label: 'Mounted user routes',
+          items: ['Register, login, logout, refresh token', 'Password and account updates', 'Avatar and cover-image updates', 'Channel profile and watch history'],
+        },
+        {
+          label: 'Video controller workflows',
+          items: ['Publish and list videos', 'Retrieve and update a video', 'Cloudinary-backed deletion', 'Toggle published status'],
+        },
+        {
+          label: 'Additional repository modules',
+          note: 'Controller/model code exists; these modules are not mounted in app.js.',
+          items: ['Playlists and comments', 'Likes and subscriptions', 'Tweets and channel dashboard'],
+        },
+      ],
+      highlights: [
+        'Layered separation across routes, middleware, controllers, models, and reusable response/error utilities.',
+        'Authentication spans password hashing, signed tokens, cookie transport, persisted refresh-token state, and request middleware.',
+        'Media handling coordinates multipart input, temporary disk storage, Cloudinary operations, cleanup, and MongoDB metadata.',
+        'Composed MongoDB reads use references, populate, $lookup, $addFields, $project, and nested aggregation pipelines.',
+      ],
+      technologies: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'JWT', 'bcrypt', 'cookie-parser', 'Multer', 'Cloudinary', 'CORS'],
+    },
+  },
+];
+
+export const technologies = [
+  { category: 'Languages', items: ['Java', 'JavaScript', 'Python', 'C', 'C++'] },
+  { category: 'Frameworks', items: ['React', 'Next.js', 'Express.js', 'Spring Boot', 'Tkinter'] },
+  { category: 'Backend / Web', items: ['Node.js', 'REST APIs', 'JWT', 'HTML', 'CSS'] },
+  { category: 'Databases', items: ['MongoDB', 'MySQL', 'SQL'] },
+  { category: 'AI / GenAI', items: ['LLM Integration', 'Google Gemini API', 'Prompt Engineering', 'Machine Learning'] },
+  { category: 'Developer Tools', items: ['Git', 'Postman', 'Power BI', 'Excel'] },
+  { category: 'Core CS', items: education.coursework },
+];
+
+export const timeline = [
+  {
+    date: 'Jul 2026',
+    title: 'Oracle Certified Foundations Associate — Agentic AI',
+    organization: 'Oracle University',
+    type: 'Certification',
+  },
+  {
+    date: '2025',
+    title: 'Samartha National Level Hackathon',
+    organization: 'SecureWipe selected among 250+ teams for the 36-hour onsite finals',
+    type: 'Achievement',
+  },
+  {
+    date: 'Aug 2024 — Nov 2025',
+    title: 'Project & Research Department',
+    organization: 'ACM Student Chapter, VIT-AP',
+    type: 'Community',
+  },
+  {
+    date: 'Aug 2024 — Jan 2025',
+    title: 'AI/ML & DA Team',
+    organization: 'Google Developer Student Clubs, VIT-AP',
+    type: 'Community',
+  },
+];
