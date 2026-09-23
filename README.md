@@ -44,36 +44,3 @@ An offline secure data sanitization project focused on verifiable storage wiping
 A Node.js and Express backend project exploring authentication, MongoDB integration, file handling, media storage, and REST API architecture.
 
 Each project is presented with additional technical context through its respective case study.
-
-## Running Locally
-
-Clone the repository:
-
-```bash
-git clone https://github.com/RonitChanalya/whyronit.git
-cd whyronit
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Purpose
-
-This portfolio is an evolving record of the projects I build and the technologies I work with.
-
-The goal is not only to show the final output, but also to provide enough context to understand the engineering behind each project.
